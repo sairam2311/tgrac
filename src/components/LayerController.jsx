@@ -68,7 +68,7 @@ const LayerController = ({ layersConfig, visibleLayers, onLayerToggle }) => {
             {group.groupName} {openGroups[group.groupName] ? "▾" : "▸"}
           </div>
 
-          {openGroups[group.groupName] &&
+         {openGroups[group.groupName] &&
             group.layers.map((layer) => (
               <div key={`${group.groupName}-${layer.name}`} style={{ padding: "5px 15px" }}>
                 <label>
@@ -93,10 +93,26 @@ const LayerController = ({ layersConfig, visibleLayers, onLayerToggle }) => {
                     </>
                   )}
                 </label>
+
+                {/* 🔹 Opacity slider */}
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.1"
+                  defaultValue="1"
+                  onChange={(e) => {
+                    if (layer.olLayer) {
+                      layer.olLayer.setOpacity(parseFloat(e.target.value));
+                    }
+                  }}
+                  style={{ width: "100%", marginTop: "3px" }}
+                />
               </div>
             ))}
         </div>
       ))}
+  
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react";
 
 export const useDraggable = (
   defaultPosition = { top: "10px", left: "10px" },
-  containerId = "map" // restrict dragging inside map container
+  containerId = "map-container" // restrict dragging inside map container
 ) => {
   const ref = useRef(null);
   const [resetKey, setResetKey] = useState(0);

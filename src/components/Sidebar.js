@@ -10,6 +10,7 @@ const Sidebar = ({ isOpen }) => {
     { path: "/education", label: "Education", icon: <Mortarboard size={18} /> },
     { path: "/health", label: "Health", icon: <Hospital size={18} /> },
     { path: "/agriculture", label: "Agriculture", icon: <Tree size={18} /> },
+    {path: "/map", label: "GIS", icon: <Mortarboard size={18} />}
   ];
 
   return (

@@ -44,9 +44,9 @@ const layersConfig = [
 
 
   const [visibleLayers, setVisibleLayers] = React.useState({
-    "Layer 1": true,
-    "Layer 2": true,
-    "Layer 3": true,
+    "Layer 1": false,
+    "Layer 2": false,
+    "Layer 3": false,
   });
 
   const toggleLayerVisibility = (layerName, groupName) => {
